@@ -1,0 +1,14 @@
+{
+  "name": "n26-to-ynab",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": {
+    "name": "Étienne Robert",
+    "email": "etiennerobert33@gmail.com",
+    "url": "http://github.com/etrobert"
+  },
+  "license": "ISC"
+}
