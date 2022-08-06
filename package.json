@@ -10,5 +10,8 @@
     "email": "etiennerobert33@gmail.com",
     "url": "http://github.com/etrobert"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.3.0"
+  }
 }
