@@ -1,5 +1,6 @@
 import fs from "fs";
 import { parse } from "csv-parse";
+import { transform } from "stream-transform";
 
 function convert(data) {
   const isIncome = data["Transaction type"] === "Income";
@@ -16,4 +17,5 @@ function convert(data) {
 
 fs.createReadStream("./example.csv")
   .pipe(parse({ delimiter: ",", columns: true }))
-  .on("data", (data) => console.log(convert(data)));
+  .pipe(transform(convert))
+  .on("data", console.log);
