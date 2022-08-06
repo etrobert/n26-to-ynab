@@ -1,9 +1,9 @@
 {
   "name": "n26-to-ynab",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.mjs"
   },
   "author": {
     "name": "Étienne Robert",

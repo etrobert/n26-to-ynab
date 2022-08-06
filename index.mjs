@@ -1,5 +1,5 @@
-const fs = require("fs");
-const { parse } = require("csv-parse");
+import fs from "fs";
+import { parse } from "csv-parse";
 
 fs.createReadStream("./example.csv")
   .pipe(parse({ delimiter: ",", columns: true }))
