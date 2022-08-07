@@ -3,13 +3,12 @@ import { parse } from "csv-parse";
 import { transform } from "stream-transform";
 import { stringify } from "csv-stringify";
 
+const [node, file, ...myArgs] = process.argv;
+
 function usage() {
-  const node = process.argv[0];
-  const file = process.argv[1];
   console.log(`usage: ${node} ${file} [input.csv]`);
 }
 
-const myArgs = process.argv.slice(2);
 if (myArgs.length < 1) {
   usage();
   process.exit();
