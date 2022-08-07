@@ -17,10 +17,8 @@ const [inputFile] = myArgs;
 
 function convert(data) {
   const isIncome = data["Transaction type"] === "Income";
-  const amount = data["Amount (EUR)"];
-  const flow = isIncome
-    ? { Inflow: amount }
-    : { Outflow: (-parseFloat(amount)).toString() };
+  const amount = parseFloat(data["Amount (EUR)"]);
+  const flow = isIncome ? { Inflow: amount } : { Outflow: -amount };
   return {
     Date: data.Date,
     Payee: data.Payee,
