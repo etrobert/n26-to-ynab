@@ -7,6 +7,7 @@ Utility that converts transaction records from [N26](https://n26.com/) format to
 ```sh
 cd n26-to-ynab
 npm install
+npm run build
 ```
 
 ## Usage

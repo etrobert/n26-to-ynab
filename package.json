@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "index.mjs",
   "scripts": {
-    "start": "node index.mjs"
+    "build": "tsc",
+    "start": "node index.js"
   },
   "author": {
     "name": "Étienne Robert",
@@ -13,5 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "csv": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.4",
+    "typescript": "^4.7.4"
   }
 }
