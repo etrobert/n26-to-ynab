@@ -1,4 +1,4 @@
-import fs, { createWriteStream } from "fs";
+import fs from "fs";
 import { parse } from "csv-parse";
 import { transform } from "stream-transform";
 import { stringify } from "csv-stringify";
@@ -41,4 +41,4 @@ fs.createReadStream(inputFile)
       },
     })
   )
-  .pipe(createWriteStream("./output.csv"));
+  .pipe(process.stdout);
