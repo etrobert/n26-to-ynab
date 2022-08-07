@@ -15,7 +15,27 @@ if (myArgs.length < 1) {
 }
 const [inputFile] = myArgs;
 
-function convert(data) {
+interface N26Data {
+  Date: string;
+  Payee: string;
+  "Account number": string;
+  "Transaction type": string;
+  "Payment reference": string;
+  "Amount (EUR)": string;
+  "Amount (Foreign Currency)": string;
+  "Type Foreign Currency": string;
+  "Exchange Rate": string;
+};
+
+interface YnabData {
+  Date: string,
+  Payee: string,
+  Memo?: string
+  Inflow?: number,
+  Outflow?: number,
+}
+
+function convert(data: N26Data): YnabData {
   const isIncome = data["Transaction type"] === "Income";
   const amount = parseFloat(data["Amount (EUR)"]);
   const flow = isIncome ? { Inflow: amount } : { Outflow: -amount };
