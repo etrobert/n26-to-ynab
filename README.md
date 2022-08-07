@@ -12,5 +12,5 @@ npm install
 ## Usage
 
 ```sh
-npm start [n26-csv-transactions.csv]
+npm start [n26-csv-transactions.csv] > ./output.csv
 ```
