@@ -26,6 +26,14 @@ function convert(data) {
   };
 }
 
+function filterOutSmallExpenses(minimumPrice) {
+  return (data) => {
+    const amount = parseFloat(data["Amount (EUR)"]);
+    const isHigh = amount < -minimumPrice;
+    return isHigh ? data : null;
+  };
+}
+
 fs.createReadStream(inputFile)
   .pipe(parse({ delimiter: ",", columns: true }))
   .pipe(transform(convert))
